@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StatementHub</title>
+  </head>
+  <body>
+    <div id="root">
+      <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h1>Loading...</h1>
+        <p>If you see this message for more than 2 seconds, React failed to load.</p>
+      </div>
+    </div>
+    <script>
+      console.log('=== DEBUGGING START ===');
+      console.log('HTML loaded');
+      console.log('Root element exists:', !!document.getElementById('root'));
+      console.log('Current URL:', window.location.href);
+      console.log('User Agent:', navigator.userAgent);
+      
+      // Suppress Chrome extension errors
+      window.addEventListener('error', (e) => {
+        if (e.message && (e.message.includes('runtime.lastError') || e.message.includes('message channel closed'))) {
+          console.warn('Suppressed extension error:', e.message);
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      // Check if React loads
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root && root.innerHTML.includes('Loading...')) {
+          console.error('React failed to mount after 3 seconds');
+          root.innerHTML = '<div style="padding: 20px; color: red; font-family: Arial;"><h1>React Failed to Load</h1><p>Try disabling browser extensions and refreshing.</p><p>Extension error detected in console.</p></div>';
+        }
+      }, 3000);
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

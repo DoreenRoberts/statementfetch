@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .debug-info {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Debug Test Page</h1>
+        <p>If you can see this styled page, your browser and hosting are working fine.</p>
+        
+        <div class="debug-info">
+            <h3>Debug Information:</h3>
+            <p><strong>Time:</strong> <span id="time"></span></p>
+            <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+            <p><strong>URL:</strong> <span id="url"></span></p>
+        </div>
+        
+        <p>The issue might be with React/Vite compilation or JavaScript loading.</p>
+    </div>
+
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('url').textContent = window.location.href;
+        
+        console.log('🔍 Debug page loaded successfully');
+        console.log('Browser:', navigator.userAgent);
+        console.log('Time:', new Date().toLocaleString());
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+</head>
+<body>
+    <h1>Simple HTML Test</h1>
+    <p>If you can see this, your hosting is working.</p>
+    <div id="test-div">Loading...</div>
+    
+    <script>
+        console.log("Simple HTML script running");
+        document.getElementById('test-div').innerHTML = 'JavaScript is working!';
+        
+        // Test if we can load a module
+        try {
+            console.log("Testing module import...");
+            import('./src/main.tsx').then(() => {
+                console.log("Module import successful");
+            }).catch(err => {
+                console.error("Module import failed:", err);
+            });
+        } catch (err) {
+            console.error("Module import error:", err);
+        }
+    </script>
+</body>
+</html>
