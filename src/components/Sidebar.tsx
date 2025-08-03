@@ -49,8 +49,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
             <Sparkles className="h-6 w-6 text-purple-600" />
           </div>
           <div>
-            <h1 className="text-white font-bold text-lg">StatementHub</h1>
-            <p className="text-purple-200 text-xs">PDF Manager</p>
+            <h1 className="text-white font-bold text-lg">StatementFetch</h1>
+<p className="text-purple-200 text-xs">Your secure, automated statement hub</p>
           </div>
         </div>
 
