@@ -56,7 +56,7 @@ const AppContent: React.FC = () => {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider  defaultTheme="light" storageKey="vite-ui-theme">
       <AuthProvider>
         <AppProvider>
           <Router>
