@@ -13,7 +13,7 @@ export const AuthPage: React.FC = () => {
             StatementFetch
           </h1>
           <p className="text-gray-600">
-            Secure, automated financial statement downloads
+            Your secure, automated statement hub
           </p>
         </div>
         
