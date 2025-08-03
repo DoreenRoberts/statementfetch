@@ -48,19 +48,20 @@ const AppLayout: React.FC = () => {
       {/* Main Content */}
       <div className="flex-1 overflow-auto">
         {/* Mobile Header */}
-        {isMobile && (
-          <div className="bg-white shadow-sm p-4 flex items-center justify-between">
-            <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              StatementHub
-            </h1>
-            <button
-              onClick={toggleSidebar}
-              className="p-2 rounded-lg bg-purple-100 text-purple-600"
-            >
-              ☰
-            </button>
-          </div>
-        )}
+ {isMobile && (
+  <div className="bg-white shadow-sm p-4 flex items-center justify-between">
+    <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+      StatementFetch
+    </h1>
+    <button
+      onClick={toggleSidebar}
+      className="p-2 rounded-lg bg-purple-100 text-purple-600"
+    >
+      ☰
+    </button>
+  </div>
+)}
+
         {/* Content */}
         {renderContent()}
       </div>
